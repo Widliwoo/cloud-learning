@@ -1,2 +1,4 @@
+server:
+  port: ${APP_PORT:8080}
 test:
-  defaultValue: "FROM_CONFIG_SERVER"
+  defaultValue: "SUPER_VALUE"
