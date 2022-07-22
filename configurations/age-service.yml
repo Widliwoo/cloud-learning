@@ -1,1 +1,2 @@
-test: "testValue"
+test:
+  defaultValue: "FROM_CONFIG_SERVER"
