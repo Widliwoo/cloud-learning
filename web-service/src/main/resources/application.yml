@@ -1,6 +1,11 @@
 spring:
   application:
     name: web-service
+  config:
+    import: "optional:configserver:"
+    discovery:
+      enabled: true
+      serviceId: config-service
 server:
   port: ${APP_PORT:8082}
 eureka:

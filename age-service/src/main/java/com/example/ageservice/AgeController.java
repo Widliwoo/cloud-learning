@@ -21,15 +21,26 @@ public class AgeController {
     @Value("${spring.application.name}")
     private String appName;
 
+    @Value("${test.defaultValue}")
+    private String defaultValue;
+
+    @Value("${test.decreaseOn}")
+    private Long decreaseOn;
+
     @GetMapping("/age")
     public Long age() {
         log.debug("{}#age requested;", this.getClass().getCanonicalName());
-        return Math.round(18 + Math.random() * 18);
+        return Math.round(18 + Math.random() * 18) - decreaseOn;
     }
 
     @GetMapping("/test")
     public String test() {
         return String.format(
                 "Hello from '%s'!", eurekaClient.getApplication(appName).getName());
+    }
+
+    @GetMapping("/defaultValue")
+    public String defaultValue() {
+        return defaultValue;
     }
 }

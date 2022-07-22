@@ -15,7 +15,6 @@ public class WebController {
     @Autowired
     private GreetingFeignClient greetingClient;
 
-
     @GetMapping("/info")
     public String getInfo() {
         String greeting = greetingClient.getGreeting();

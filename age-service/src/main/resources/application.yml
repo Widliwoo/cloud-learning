@@ -1,8 +1,11 @@
 spring:
   application:
     name: age-service
-server:
-  port: ${APP_PORT:8080}
+  config:
+    import: "optional:configserver:"
+    discovery:
+      enabled: true
+      serviceId: config-service
 eureka:
   client:
     serviceUrl:
